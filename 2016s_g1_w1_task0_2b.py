@@ -20,7 +20,7 @@ g.es(your_list)
 '''
 # readlines() 會以每一行資料當作一個字串, 作為 element, 並輸出一個數列資料
 result = []
-with open("2016_cd_2a_2.txt", 'r') as f:
+with open("2016_cd_2b_3.txt", 'r') as f:
     content = f.readlines()
     #g.es(content)
     #g.es(len(content))
