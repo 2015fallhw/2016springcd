@@ -16,7 +16,7 @@
 </v>
 <v t="amd.20160218180457.1"><vh>課程運作模式</vh></v>
 <v t="amd.20160218183626.1" a="E"><vh>分組與座位表</vh>
-<v t="leo.20160222105529.1" a="E"><vh>task 0</vh>
+<v t="leo.20160222105529.1"><vh>task 0</vh>
 <v t="leo.20160225112545.1" a="E"><vh>2a</vh>
 <v t="leo.20160225112545.2"><vh>@edit 2016s_g1_w1_task0.py</vh></v>
 <v t="leo.20160225112545.3"><vh>@edit 2016_cd_2a_1.txt</vh></v>
@@ -42,6 +42,18 @@
 </v>
 </v>
 <v t="leo.20160222113059.1"><vh>ungit 啟動</vh></v>
+<v t="amd.20160302205550.1" a="E"><vh>網際程式</vh>
+<v t="amd.20160302211200.1" a="E"><vh>@path chat</vh>
+<v t="amd.20160302211806.1"><vh>@edit requirements.txt</vh></v>
+<v t="amd.20160302211826.1"><vh>@edit app.py</vh></v>
+<v t="amd.20160302211843.1" a="E"><vh>@path templates</vh>
+<v t="amd.20160302211854.1"><vh>@edit index.html</vh></v>
+</v>
+<v t="amd.20160302211905.1" a="E"><vh>@path static</vh>
+<v t="amd.20160302211915.1"><vh>@edit style.css</vh></v>
+</v>
+</v>
+</v>
 <v t="amd.20160221175212.1"><vh>@edit index.html</vh></v>
 </vnodes>
 <tnodes>
@@ -266,6 +278,14 @@ vertical: body pane on the botton</t>
 ('40323256', (7, 4))
 ('40328242', (7, 7))
 ('40328245', (8, 5))</t>
+<t tx="amd.20160302205550.1">https://github.com/aidancrane/ChatBox
+
+http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
+
+https://github.com/sirkaiserkai/Flask-SocketIO-Chat.git</t>
+<t tx="amd.20160302211200.1">https://github.com/sirkaiserkai/Flask-SocketIO-Chat.git</t>
+<t tx="amd.20160302211843.1"></t>
+<t tx="amd.20160302211905.1"></t>
 <t tx="leo.20160222105529.1">2016_cd_2a_3.txt 為本班目前在學校的修課名單
 
 2016_cd_2a_1.txt 與 2016_cd_2a_2.txt 則為各組所填寫的分組名單
