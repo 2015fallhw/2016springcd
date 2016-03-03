@@ -42,8 +42,8 @@
 </v>
 </v>
 <v t="leo.20160222113059.1"><vh>ungit 啟動</vh></v>
-<v t="amd.20160302205550.1"><vh>網際程式</vh>
-<v t="amd.20160302211200.1"><vh>@path chat</vh>
+<v t="amd.20160302205550.1" a="E"><vh>網際程式</vh>
+<v t="amd.20160302211200.1" a="E"><vh>@path chat</vh>
 <v t="amd.20160302211806.1"><vh>@edit requirements.txt</vh></v>
 <v t="amd.20160302211826.1"><vh>@edit app.py</vh></v>
 <v t="amd.20160302211843.1" a="E"><vh>@path templates</vh>
@@ -298,16 +298,27 @@ https://github.com/sirkaiserkai/Flask-SocketIO-Chat.git</t>
 <t tx="amd.20160302211200.1">https://github.com/sirkaiserkai/Flask-SocketIO-Chat.git</t>
 <t tx="amd.20160302211843.1"></t>
 <t tx="amd.20160302211905.1"></t>
-<t tx="amd.20160303214338.1"></t>
+<t tx="amd.20160303214338.1">在近端的 repository 中, 新增與 URLofOpenshift_site 對應的 openshift 倉儲, 名稱為 openshift
+
+git remote add openshift URLofOpenshift_site
+
+git add -A
+
+git commit -m ""
+
+將 gh-pages 分支資料推向 origin 
+
+git push origin gh-pages
+
+將 gh-pages 分支資料推向 openshift
+
+git push openshift gh-pages</t>
 <t tx="amd.20160303214445.1">@language python
 # coding: utf-8
 from flask import Flask, send_from_directory, request, redirect, render_template, session, make_response
 import random
 
 app = Flask(__name__)
-
-# Instantiate Authomatic.
-authomatic = Authomatic(CONFIG, 'A0Zr9@8j/3yX R~XHH!jmN]LWX/,?R@T', report_errors=False)
 
 # 使用 session 必須要設定 secret_key
 # In order to use sessions you have to set a secret key

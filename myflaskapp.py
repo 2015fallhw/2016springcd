@@ -4,9 +4,6 @@ import random
 
 app = Flask(__name__)
 
-# Instantiate Authomatic.
-authomatic = Authomatic(CONFIG, 'A0Zr9@8j/3yX R~XHH!jmN]LWX/,?R@T', report_errors=False)
-
 # 使用 session 必須要設定 secret_key
 # In order to use sessions you have to set a secret key
 # set the secret key.  keep this really secret:
