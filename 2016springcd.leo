@@ -66,7 +66,7 @@
 <v t="amd.20160303214445.7"><vh>guessform</vh></v>
 <v t="amd.20160303214445.8"><vh>docheck</vh></v>
 </v>
-<v t="amd.20160303223009.1" a="E"><vh>@path templates</vh>
+<v t="amd.20160303223009.1"><vh>@path templates</vh>
 <v t="amd.20160303223009.2"><vh>@edit index.html</vh></v>
 <v t="amd.20160303223009.4"><vh>@edit guessform.html</vh></v>
 <v t="amd.20160303223009.5"><vh>@edit docheck.html</vh></v>
@@ -317,9 +317,9 @@ git commit -m ""
 
 git push origin gh-pages
 
-將 gh-pages 分支資料推向 openshift
+將資料推向 openshift
 
-git push openshift gh-pages</t>
+git push openshift</t>
 <t tx="amd.20160303214445.1">@language python
 # coding: utf-8
 from flask import Flask, send_from_directory, request, redirect, render_template, session, make_response
