@@ -42,8 +42,8 @@
 </v>
 </v>
 <v t="leo.20160222113059.1"><vh>ungit 啟動</vh></v>
-<v t="amd.20160302205550.1" a="E"><vh>網際程式</vh>
-<v t="amd.20160302211200.1" a="E"><vh>@path chat</vh>
+<v t="amd.20160302205550.1"><vh>網際程式</vh>
+<v t="amd.20160302211200.1"><vh>@path chat</vh>
 <v t="amd.20160302211806.1"><vh>@edit requirements.txt</vh></v>
 <v t="amd.20160302211826.1"><vh>@edit app.py</vh></v>
 <v t="amd.20160302211843.1" a="E"><vh>@path templates</vh>
@@ -55,6 +55,17 @@
 </v>
 </v>
 <v t="amd.20160221175212.1"><vh>@edit index.html</vh></v>
+<v t="amd.20160303214338.1" a="E"><vh>Flask 程式 (openshift)</vh>
+<v t="amd.20160303214413.1"><vh>@edit setup.py</vh></v>
+<v t="amd.20160303214434.1"><vh>@edit wsgi.py</vh></v>
+<v t="amd.20160303214445.1"><vh>@clean myflaskapp.py</vh>
+<v t="amd.20160303214445.3"><vh>index</vh></v>
+<v t="amd.20160303214445.4"><vh>user</vh></v>
+<v t="amd.20160303214445.6"><vh>red</vh></v>
+<v t="amd.20160303214445.7"><vh>guessform</vh></v>
+<v t="amd.20160303214445.8"><vh>docheck</vh></v>
+</v>
+</v>
 </vnodes>
 <tnodes>
 <t tx="amd.20160218180208.1"></t>
@@ -286,6 +297,96 @@ https://github.com/sirkaiserkai/Flask-SocketIO-Chat.git</t>
 <t tx="amd.20160302211200.1">https://github.com/sirkaiserkai/Flask-SocketIO-Chat.git</t>
 <t tx="amd.20160302211843.1"></t>
 <t tx="amd.20160302211905.1"></t>
+<t tx="amd.20160303214338.1"></t>
+<t tx="amd.20160303214445.1">@language python
+# coding: utf-8
+from flask import Flask, send_from_directory, request, redirect, render_template, session, make_response
+import random
+import github3
+# for authomatic
+from authomatic.adapters import WerkzeugAdapter
+from authomatic import Authomatic
+# from config.py 導入 CONFIG
+from config import CONFIG
+
+app = Flask(__name__)
+
+# Instantiate Authomatic.
+authomatic = Authomatic(CONFIG, 'A0Zr9@8j/3yX R~XHH!jmN]LWX/,?R@T', report_errors=False)
+
+# 使用 session 必須要設定 secret_key
+# In order to use sessions you have to set a secret key
+# set the secret key.  keep this really secret:
+app.secret_key = 'A0Zr9@8j/3yX R~XHH!jmN]LWX/,?R@T'
+
+@others
+
+if __name__ == "__main__":
+    app.run()
+
+</t>
+<t tx="amd.20160303214445.3">@app.route("/")
+def index():
+    #這是猜數字遊戲的起始表單, 主要在產生答案, 並且將 count 歸零
+    # 將標準答案存入 answer session 對應區
+    theanswer = random.randint(1, 100)
+    thecount = 0
+    # 將答案與計算次數變數存進 session 對應變數
+    session['answer'] = theanswer
+    session['count'] = thecount
+
+    return render_template("index.html", answer=theanswer, count=thecount)
+
+
+</t>
+<t tx="amd.20160303214445.4">@app.route('/user/&lt;name&gt;')
+def user(name):
+    return render_template("user.html", name=name)</t>
+<t tx="amd.20160303214445.6">@app.route('/red')
+def red():
+    # 重新導向 google
+    return redirect("http://www.google.com")</t>
+<t tx="amd.20160303214445.7">@app.route('/guessform')
+def guessform():
+    session["count"] += 1
+    guess = session.get("guess")
+    theanswer = session.get("answer")
+    count = session.get("count")
+    return render_template("guessform.html", guess=guess, answer=theanswer, count=count)</t>
+<t tx="amd.20160303214445.8">@app.route('/docheck', methods=['POST'])
+def docheck():
+    # session[] 存資料
+    # session.get() 取 session 資料
+    # 利用 request.form[] 取得表單欄位資料, 然後送到 template
+    guess = request.form["guess"]
+    session["guess"] = guess
+    # 假如使用者直接執行 doCheck, 則設法轉回根方法
+    if guess is None:
+        redirect("/")
+    # 從 session 取出 answer 對應資料, 且處理直接執行 docheck 時無法取 session 值情況
+    try:
+        theanswer = int(session.get('answer'))
+    except:
+        redirect("/")
+    # 經由表單所取得的 guess 資料型別為 string
+    try:
+        theguess = int(guess)
+    except:
+        return redirect("/guessform")
+    # 每執行 doCheck 一次,次數增量一次
+    session["count"] += 1
+    count = session.get("count")
+    # 答案與所猜數字進行比對
+    if theanswer &lt; theguess:
+        return render_template("toobig.html", guess=guess, answer=theanswer, count=count)
+    elif theanswer &gt; theguess:
+        return render_template("toosmall.html", guess=guess, answer=theanswer, count=count)
+    else:
+        # 已經猜對, 從 session 取出累計猜測次數
+        thecount = session.get('count')
+        return "猜了 "+str(thecount)+" 次, 終於猜對了, 正確答案為 "+str(theanswer)+": &lt;a href='/'&gt;再猜&lt;/a&gt;"
+    return render_template("docheck.html", guess=guess)
+ </t>
 <t tx="leo.20160222105529.1">2016_cd_2a_3.txt 為本班目前在學校的修課名單
 
 2016_cd_2a_1.txt 與 2016_cd_2a_2.txt 則為各組所填寫的分組名單
