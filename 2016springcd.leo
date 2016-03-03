@@ -56,9 +56,10 @@
 </v>
 <v t="amd.20160221175212.1"><vh>@edit index.html</vh></v>
 <v t="amd.20160303214338.1" a="E"><vh>Flask 程式 (openshift)</vh>
+<v t="amd.20160303220357.1"><vh>Ubuntu 使用 Filezilla</vh></v>
 <v t="amd.20160303214413.1"><vh>@edit setup.py</vh></v>
 <v t="amd.20160303214434.1"><vh>@edit wsgi.py</vh></v>
-<v t="amd.20160303214445.1"><vh>@clean myflaskapp.py</vh>
+<v t="amd.20160303214445.1" a="E"><vh>@clean myflaskapp.py</vh>
 <v t="amd.20160303214445.3"><vh>index</vh></v>
 <v t="amd.20160303214445.4"><vh>user</vh></v>
 <v t="amd.20160303214445.6"><vh>red</vh></v>
@@ -302,12 +303,6 @@ https://github.com/sirkaiserkai/Flask-SocketIO-Chat.git</t>
 # coding: utf-8
 from flask import Flask, send_from_directory, request, redirect, render_template, session, make_response
 import random
-import github3
-# for authomatic
-from authomatic.adapters import WerkzeugAdapter
-from authomatic import Authomatic
-# from config.py 導入 CONFIG
-from config import CONFIG
 
 app = Flask(__name__)
 
@@ -387,6 +382,9 @@ def docheck():
         return "猜了 "+str(thecount)+" 次, 終於猜對了, 正確答案為 "+str(theanswer)+": &lt;a href='/'&gt;再猜&lt;/a&gt;"
     return render_template("docheck.html", guess=guess)
  </t>
+<t tx="amd.20160303220357.1">ssh-add ~/.ssh/id_rsa
+
+Windows: puttygen.exe</t>
 <t tx="leo.20160222105529.1">2016_cd_2a_3.txt 為本班目前在學校的修課名單
 
 2016_cd_2a_1.txt 與 2016_cd_2a_2.txt 則為各組所填寫的分組名單

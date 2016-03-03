@@ -1,12 +1,6 @@
 # coding: utf-8
 from flask import Flask, send_from_directory, request, redirect, render_template, session, make_response
 import random
-import github3
-# for authomatic
-from authomatic.adapters import WerkzeugAdapter
-from authomatic import Authomatic
-# from config.py 導入 CONFIG
-from config import CONFIG
 
 app = Flask(__name__)
 
