@@ -66,7 +66,7 @@
 <v t="amd.20160303214445.7"><vh>guessform</vh></v>
 <v t="amd.20160303214445.8"><vh>docheck</vh></v>
 </v>
-<v t="amd.20160303223009.1"><vh>@path templates</vh>
+<v t="amd.20160303223009.1" a="E"><vh>@path templates</vh>
 <v t="amd.20160303223009.2"><vh>@edit index.html</vh></v>
 <v t="amd.20160303223009.4"><vh>@edit guessform.html</vh></v>
 <v t="amd.20160303223009.5"><vh>@edit docheck.html</vh></v>
@@ -319,7 +319,11 @@ git push origin gh-pages
 
 將資料推向 openshift
 
-git push openshift</t>
+git push openshift
+
+與 2016springcd 倉儲對應的 Openshift 網站:
+
+http://cd-2015fallhw.rhcloud.com/</t>
 <t tx="amd.20160303214445.1">@language python
 # coding: utf-8
 from flask import Flask, send_from_directory, request, redirect, render_template, session, make_response
