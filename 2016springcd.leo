@@ -66,6 +66,13 @@
 <v t="amd.20160303214445.7"><vh>guessform</vh></v>
 <v t="amd.20160303214445.8"><vh>docheck</vh></v>
 </v>
+<v t="amd.20160303223009.1" a="E"><vh>@path templates</vh>
+<v t="amd.20160303223009.2"><vh>@edit index.html</vh></v>
+<v t="amd.20160303223009.4"><vh>@edit guessform.html</vh></v>
+<v t="amd.20160303223009.5"><vh>@edit docheck.html</vh></v>
+<v t="amd.20160303223009.6"><vh>@edit toobig.html</vh></v>
+<v t="amd.20160303223009.7"><vh>@edit toosmall.html</vh></v>
+</v>
 </v>
 </vnodes>
 <tnodes>
@@ -396,6 +403,7 @@ def docheck():
 <t tx="amd.20160303220357.1">ssh-add ~/.ssh/id_rsa
 
 Windows: puttygen.exe</t>
+<t tx="amd.20160303223009.1"></t>
 <t tx="leo.20160222105529.1">2016_cd_2a_3.txt 為本班目前在學校的修課名單
 
 2016_cd_2a_1.txt 與 2016_cd_2a_2.txt 則為各組所填寫的分組名單
