@@ -1,0 +1,38 @@
+{% block content %}
+    <h2>Chooser<h2>
+        <h3><table><form action="/optionaction" method="POST">
+          <td>
+          <label>Select 1:</label>
+                <select name="option1" width="300px">
+                {# 注意要使用 set 設定變數值 #}
+                {% set count = 0 %}
+                {% for element in option_list1 %}
+                    {% set count = count + 1 %}
+                    {# 以第1個選項作為 default #}
+                    {% if count == 1 %}
+                        <option value="{{ element }}" SELECTED>{{ element }}</option>
+                    {% else %}
+                        <option value="{{ element }}">{{ element }}</option>
+                    {% endif %}
+                {% endfor %}
+                </select>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          <label>Select 2:</label>
+                <select name="option2" width="300px">
+                {% for element in option_list2 %}
+                    <option value="{{ element }}" SELECTED>{{ element }}</option>
+                {% endfor %}
+                </select>
+          </td>
+                <td>
+                    <input class="button1" type="submit" value="Select">
+                </td>
+        </form></table><h3>
+
+  </div>
+{% endblock content %}

@@ -70,6 +70,19 @@ def docheck():
         return "猜了 "+str(thecount)+" 次, 終於猜對了, 正確答案為 "+str(theanswer)+": <a href='/'>再猜</a>"
     return render_template("docheck.html", guess=guess)
  
+@app.route('/option', methods=["GET", "POST"])
+def option():
+    option_list1 = ["1", "2", "3", "4"]
+    option_list2 = ["a", "b"]
+
+    return render_template('option.html', option_list1=option_list1, option_list2=option_list2)
+@app.route('/optionaction', methods=['POST'])
+def optionaction():
+    # 這裡將根據使用者所選擇的選項值, 來進行後續的設計運算
+    return request.form["option1"] + ":" + request.form["option2"]
+    # 等運算或資料處理結束後, 再將相關值送到對應的 template 進行資料的展示
+    #return render_template('optionaction.html', option_list1=option_list1, option_list2=option_list2)
+    
 
 if __name__ == "__main__":
     app.run()
