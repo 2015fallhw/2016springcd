@@ -43,8 +43,9 @@
 </v>
 <v t="leo.20160222113059.1"><vh>ungit 啟動</vh></v>
 <v t="amd.20160307212303.1"><vh>@edit .gitignore</vh></v>
-<v t="amd.20160305213555.1"><vh>Github 協同</vh>
+<v t="amd.20160305213555.1" a="E"><vh>Github 協同</vh>
 <v t="amd.20160305223955.1"><vh>可攜 Portable SourceTree 製作</vh></v>
+<v t="amd.20160308142546.1"><vh>測試 pull request reversing</vh></v>
 </v>
 <v t="amd.20160305232735.1"><vh>參考</vh></v>
 <v t="amd.20160305233001.1"><vh>Git 開發</vh></v>
@@ -584,6 +585,7 @@ def optionaction():
     # 等運算或資料處理結束後, 再將相關值送到對應的 template 進行資料的展示
     #return render_template('optionaction.html', option_list1=option_list1, option_list2=option_list2)
     </t>
+<t tx="amd.20160308142546.1"></t>
 <t tx="leo.20160222105529.1">2016_cd_2a_3.txt 為本班目前在學校的修課名單
 
 2016_cd_2a_1.txt 與 2016_cd_2a_2.txt 則為各組所填寫的分組名單
