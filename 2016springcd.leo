@@ -52,7 +52,7 @@
 <v t="amd.20160302211200.1"><vh>@path chat</vh>
 <v t="amd.20160302211806.1"><vh>@edit requirements.txt</vh></v>
 <v t="amd.20160302211826.1"><vh>@edit app.py</vh></v>
-<v t="amd.20160302211843.1"><vh>@path templates</vh>
+<v t="amd.20160302211843.1" a="E"><vh>@path templates</vh>
 <v t="amd.20160302211854.1"><vh>@edit index.html</vh></v>
 </v>
 <v t="amd.20160302211905.1" a="E"><vh>@path static</vh>
