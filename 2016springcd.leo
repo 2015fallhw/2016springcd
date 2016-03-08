@@ -43,14 +43,13 @@
 </v>
 <v t="leo.20160222113059.1"><vh>ungit 啟動</vh></v>
 <v t="amd.20160307212303.1"><vh>@edit .gitignore</vh></v>
-<v t="amd.20160305213555.1" a="E"><vh>Github 協同</vh>
+<v t="amd.20160305213555.1"><vh>Github 協同</vh>
 <v t="amd.20160305223955.1"><vh>可攜 Portable SourceTree 製作</vh></v>
-<v t="amd.20160308142546.1"><vh>測試 pull request reversing</vh></v>
 </v>
 <v t="amd.20160305232735.1"><vh>參考</vh></v>
 <v t="amd.20160305233001.1"><vh>Git 開發</vh></v>
 <v t="amd.20160302205550.1" a="E"><vh>網際程式</vh>
-<v t="amd.20160302211200.1"><vh>@path chat</vh>
+<v t="amd.20160302211200.1" a="E"><vh>@path chat</vh>
 <v t="amd.20160302211806.1"><vh>@edit requirements.txt</vh></v>
 <v t="amd.20160302211826.1"><vh>@edit app.py</vh></v>
 <v t="amd.20160302211843.1" a="E"><vh>@path templates</vh>
@@ -64,9 +63,13 @@
 <v t="amd.20160221175212.1"><vh>@edit index.html</vh></v>
 <v t="amd.20160303214338.1" a="E"><vh>Flask 程式 (openshift)</vh>
 <v t="amd.20160303220357.1"><vh>Ubuntu 使用 Filezilla</vh></v>
+<v t="amd.20160308171830.1" a="E"><vh>@path static</vh>
+<v t="amd.20160308171907.1"><vh>@edit axuploader.js</vh></v>
+</v>
 <v t="amd.20160303214413.1"><vh>@edit setup.py</vh></v>
 <v t="amd.20160303214434.1"><vh>@edit wsgi.py</vh></v>
 <v t="amd.20160303214445.1" a="E"><vh>@clean myflaskapp.py</vh>
+<v t="amd.20160308172020.1"><vh>__init__</vh></v>
 <v t="amd.20160303214445.3"><vh>index</vh></v>
 <v t="amd.20160303214445.4"><vh>user</vh></v>
 <v t="amd.20160303214445.6"><vh>red</vh></v>
@@ -585,7 +588,48 @@ def optionaction():
     # 等運算或資料處理結束後, 再將相關值送到對應的 template 進行資料的展示
     #return render_template('optionaction.html', option_list1=option_list1, option_list2=option_list2)
     </t>
-<t tx="amd.20160308142546.1"></t>
+<t tx="amd.20160308171830.1"></t>
+<t tx="amd.20160308172020.1">def __init__():
+    # 建立必要的目錄
+    # hope to create downloads and images directories　
+    if not os.path.isdir(data_dir+"images"):
+        try:
+            os.makedirs(data_dir+"images")
+        except:
+            print("images mkdir error")
+    if not os.path.isdir(data_dir+"downloads"):
+        try:
+            os.makedirs(data_dir+"downloads")
+        except:
+            print("downloads mkdir error")
+    if not os.path.isdir(data_dir+"db"):
+        try:
+            os.makedirs(data_dir+"db")
+        except:
+            print("db mkdir error")
+    # 建立資料庫檔案
+    '''
+    try:
+        conn = sqlite3.connect(data_dir+"db/database.db")
+        cur = conn.cursor()
+        # 建立資料表
+        cur.execute("CREATE TABLE IF NOT EXISTS entries( \
+                id INTEGER PRIMARY KEY AUTOINCREMENT, \
+                name TEXT not null, \
+                category TEXT not null, \
+                knownby TEXT not null, \
+                memo TEXT);")
+        cur.close()
+        conn.close()
+    except:
+        print("can not create db and table")
+    with closing(connect_db()) as db:
+        with app.open_resource('schema.sql' , mode='r') as f:
+            db.cursor().executescript(f.read())
+        db.commit()
+    '''
+        
+</t>
 <t tx="leo.20160222105529.1">2016_cd_2a_3.txt 為本班目前在學校的修課名單
 
 2016_cd_2a_1.txt 與 2016_cd_2a_2.txt 則為各組所填寫的分組名單

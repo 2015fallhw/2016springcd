@@ -9,6 +9,46 @@ app = Flask(__name__)
 # set the secret key.  keep this really secret:
 app.secret_key = 'A0Zr9@8j/3yX R~XHH!jmN]LWX/,?R@T'
 
+def __init__():
+    # 建立必要的目錄
+    # hope to create downloads and images directories　
+    if not os.path.isdir(data_dir+"images"):
+        try:
+            os.makedirs(data_dir+"images")
+        except:
+            print("images mkdir error")
+    if not os.path.isdir(data_dir+"downloads"):
+        try:
+            os.makedirs(data_dir+"downloads")
+        except:
+            print("downloads mkdir error")
+    if not os.path.isdir(data_dir+"db"):
+        try:
+            os.makedirs(data_dir+"db")
+        except:
+            print("db mkdir error")
+    # 建立資料庫檔案
+    '''
+    try:
+        conn = sqlite3.connect(data_dir+"db/database.db")
+        cur = conn.cursor()
+        # 建立資料表
+        cur.execute("CREATE TABLE IF NOT EXISTS entries( \
+                id INTEGER PRIMARY KEY AUTOINCREMENT, \
+                name TEXT not null, \
+                category TEXT not null, \
+                knownby TEXT not null, \
+                memo TEXT);")
+        cur.close()
+        conn.close()
+    except:
+        print("can not create db and table")
+    with closing(connect_db()) as db:
+        with app.open_resource('schema.sql' , mode='r') as f:
+            db.cursor().executescript(f.read())
+        db.commit()
+    '''
+        
 @app.route("/")
 def index():
     #這是猜數字遊戲的起始表單, 主要在產生答案, 並且將 count 歸零
